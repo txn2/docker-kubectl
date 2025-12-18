@@ -2,24 +2,23 @@
 
 Kubectl installed in an alpine based image from docker. Used for container building and k8s deployments in CI/CD.
 
-## Build
+## Versioning
+
+Images are versioned using the format `<docker-version>-<kubectl-version>-<revision>`. The Makefile automatically uses the latest git tag.
+
+## Make Targets
 
 ```bash
-docker build -t txn2/docker-kubectl .
+make build   # Build with latest git tag
+make test    # Build and verify kubectl works
+make tag     # Build and tag as latest
+make push    # Build, tag, and push both
+make all     # Same as push
 ```
 
-## Tagging
-
-Images are versioned using the format `<docker-version>-<kubectl-version>-<revision>`:
+## Release
 
 ```bash
-docker build -t txn2/docker-kubectl:29.1.3-1.35.0-2 .
-docker tag txn2/docker-kubectl:29.1.3-1.35.0-2 txn2/docker-kubectl:latest
-```
-
-## Push
-
-```bash
-docker push txn2/docker-kubectl:29.1.3-1.35.0-2
-docker push txn2/docker-kubectl:latest
+git tag 29.1.3-1.35.0-3
+make push
 ```

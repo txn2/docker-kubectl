@@ -8,10 +8,12 @@ This is a Docker image that combines Docker-in-Docker (dind) with kubectl. It's 
 
 ## Build and Tag
 
-Images use the versioning format `<docker-version>-<kubectl-version>-<revision>`:
+Images use the versioning format `<docker-version>-<kubectl-version>-<revision>`. The Makefile uses the latest git tag automatically.
 
 ```bash
-docker build -t txn2/docker-kubectl:29.1.3-1.35.0-2 .
+make build   # Build with latest git tag
+make test    # Build and verify kubectl works
+make push    # Build, tag, and push
 ```
 
 ## Architecture
