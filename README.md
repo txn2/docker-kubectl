@@ -10,16 +10,16 @@ docker build -t txn2/docker-kubectl .
 
 ## Tagging
 
-Images are versioned using the format `<docker-version>-<kubectl-version>`:
+Images are versioned using the format `<docker-version>-<kubectl-version>-<revision>`:
 
 ```bash
-docker build -t txn2/docker-kubectl:29.1.3-1.35.0 .
-docker tag txn2/docker-kubectl:29.1.3-1.35.0 txn2/docker-kubectl:latest
+docker build -t txn2/docker-kubectl:29.1.3-1.35.0-2 .
+docker tag txn2/docker-kubectl:29.1.3-1.35.0-2 txn2/docker-kubectl:latest
 ```
 
 ## Push
 
 ```bash
-docker push txn2/docker-kubectl:29.1.3-1.35.0
+docker push txn2/docker-kubectl:29.1.3-1.35.0-2
 docker push txn2/docker-kubectl:latest
 ```

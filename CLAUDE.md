@@ -8,10 +8,10 @@ This is a Docker image that combines Docker-in-Docker (dind) with kubectl. It's 
 
 ## Build and Tag
 
-Images use the versioning format `<docker-version>-<kubectl-version>`:
+Images use the versioning format `<docker-version>-<kubectl-version>-<revision>`:
 
 ```bash
-docker build -t txn2/docker-kubectl:29.1.3-1.35.0 .
+docker build -t txn2/docker-kubectl:29.1.3-1.35.0-2 .
 ```
 
 ## Architecture
